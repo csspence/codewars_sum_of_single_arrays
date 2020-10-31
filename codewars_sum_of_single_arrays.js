@@ -8,6 +8,24 @@ More examples in the test cases.
 Good luck!
 */
 
-function repeats(arr){
-//..
-};
+const repeats = (arr) => {
+    let arr2 = [];
+    let obj = {};
+    for(let i = 0; i < arr.length; i++) {
+        if(obj[arr[i]] === undefined) {
+          obj[arr[i]] = 1;
+        } else {
+          obj[arr[i]]++;
+        }
+     }
+     for(let i = 0; i < arr.length; i++) {
+         if(obj[arr[i]] < 2) {
+           arr2.push(arr[i]);
+         }
+     }
+    console.log(arr2);
+  
+    return arr2.reduce(function(accumulator, currentValue) {
+      return accumulator + currentValue;
+    })
+  };
